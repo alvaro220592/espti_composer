@@ -1,0 +1,17 @@
+{
+    "name": "alvaro220592/espti_composer",
+    "description": "Curso de composer da EspecializaTI",
+    "authors": [
+        {
+            "name": "alvaro220592",
+            "email": "alvaro220592@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "eti\\": "src/eti/",
+            "app\\": "app/"
+        }
+    }
+}

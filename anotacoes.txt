@@ -1,0 +1,18 @@
+aula 1
+    depois de configurar o composer init, tem que dar o composer update ou composer install. Se nao tiver nenhuma dependencia, não baixa nada
+
+    na pasta vendor ficam as bibliotecas de terceiros
+
+aula 2
+    foi criada uma pasta camada public para ficar o index.php
+    no index foi requerido o autoload.php
+    foi criada uma pasta chamada src. dentro de src foi criada a pasta chamada eti e dentro desta uma chamada DB. 
+    dentro da DB foi criado o arquivo "Query.php"
+
+    no composer.json foi feito o autoload e nele o namespace "eti\\" que equivale a 'src/eti'
+
+    foi criada uma pasta app com os MVC e um autoload pra ela tbm
+
+    depois disso é feito o composer dump-autoload pra atualizar as dependências
+
+        NA HORA DE DECLARAR O NAMESPACE NA CLASSE, NÃO COLOCA BARRA INVERSA NO COMEÇO TIPO: namespace \app\controllers. É app\controllers
