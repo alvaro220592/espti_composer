@@ -15,4 +15,50 @@ aula 2
 
     depois disso é feito o composer dump-autoload pra atualizar as dependências
 
-        NA HORA DE DECLARAR O NAMESPACE NA CLASSE, NÃO COLOCA BARRA INVERSA NO COMEÇO TIPO: namespace \app\controllers. É app\controllers
+    NA HORA DE DECLARAR O NAMESPACE NA CLASSE, NÃO COLOCA BARRA INVERSA NO COMEÇO TIPO: namespace \app\controllers. É app\controllers
+
+aula 4 - require e require-dev
+    foi usado o site packagist pra pegar o pacote da aula - monolog. As instruções de uso estão em "https://github.com/Seldaek/monolog"
+    comando: composer require monolog/monolog
+    depois de rodar o comando é possível ver uma dependencia adicionada no composer.json. Agora basta dar um 'composer update'
+
+    O require-dev serve pra baixar pacotes apenas na máquina local e que quando subir o sistema em produção, eles não vão junto. Fica num objeto de dependencias tipo o require:
+        "require-dev": {
+            blablabla
+        }
+    um exemplo de pacote que geralmente se usa só em produção 'p PHPUnit. Foi baixado também com o comando require <pacote> --dev
+
+
+    No require é possível definir a versão do php necessária pra rodar o sistema:
+        "require":{
+            "php":">=7"
+        }
+
+    No ambiente de produção, para não instalar os pacores dev, basta rodar "composer update --no-dev". O servidor de produção irá ignorar os pacotes do require dev
+
+aula 5 - versões de pacote 
+    detalhes: https://getcomposer.org/doc/articles/versions.md
+
+    para escolher a versão é possível colocar no composer.json assim:
+    "require":{
+        "monolog/monolog":"1.23"
+    }
+    ou
+    "require":{
+        "nome/pacote": ">=1.0" ---> maior ou igual a versao 1.0
+        "nome/pacote": ">=1.0 <2.0" -->maior ou igual a versão 1.0 e menor que a versão 2.0
+        "nome/pacote": "~1.3" --> significa q pode ir do 1.3 até o 2.0
+        "nome/pacote": "~1.2.3" --> significa q pode ir do 1.2.3 até o 1.3.0
+        "nome/pacote": "^1.2.3" --> significa q pode ir do 1.2.3 até o 2.0.0
+        "nome/pacote": "^0.2.0" --> significa q pode ir do 0.2.0 até o 0.3.0
+    }
+
+    ESTABILIDADE:
+    
+    minimum-stability": "stable" --> só vai baixar pacote cuja estabilidade mínima seja a descrita
+    minimum-stability": "dev" --> mesma coisa
+
+    Exemplos de estabillidade: dev, alpha, beta, RC e stable
+
+aula 6 - usando o pacote dompdf - usado pra gerar pdf
+    

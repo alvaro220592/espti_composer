@@ -6,10 +6,28 @@ use \eti\DB\Query;
 
 use \app\controllers\HomeController;
 
-$query = new Query;
+use Dompdf\Dompdf;
+
+/* $query = new Query;
 
 echo $query->query();
 
 $home = new HomeController;
 
-echo $home->home();
+echo $home->home(); */
+
+
+// instancia
+$dompdf = new Dompdf;
+
+// cria o conteúdo que vai sair no pdf
+$dompdf->loadHtml('Teste PDF');
+
+// configura o layout
+$dompdf->setPaper('A4', 'landscape');
+
+// renderiza
+$dompdf->render();
+
+// mostra no browser
+$dompdf->stream();
